@@ -23,5 +23,18 @@ namespace Parks
         {
             InitializeComponent();
         }
+
+        private void btn_addPlant_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_appointEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("All OK");
+            AppointEmployee appointEmployee = new AppointEmployee();
+            appointEmployee.Show();
+            Close();
+        }
     }
 }

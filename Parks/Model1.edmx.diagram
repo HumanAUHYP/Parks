@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="da31687912694effb5fe8d49d2e79604" Name="Diagram1">
+        <EntityTypeShape EntityType="ParksModel.Decorators" Width="1.5" PointX="10" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Education" Width="1.5" PointX="7.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Employee" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Firm" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Plants" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.PlantSpecies" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Services" Width="1.5" PointX="10" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.WateringMode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.WorkSchedule" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ParksModel.Zones" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="ParksModel.FK_Decorators_Education" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_WorkSchedule_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_Services_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_Plants_PlantSpecies" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_Plants_WateringMode" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_WorkSchedule_Plants" ManuallyRouted="false" />
+        <AssociationConnector Association="ParksModel.FK_Zones_Plants" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
