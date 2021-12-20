@@ -20,9 +20,32 @@ namespace Parks
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string password = "123"; 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (tbx_password.Password == password)
+                {
+                    MessageBox.Show("All OK");
+                    AdminMenu adminMenu = new AdminMenu();
+                    adminMenu.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show($"Неверный пароль", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка {ex}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
