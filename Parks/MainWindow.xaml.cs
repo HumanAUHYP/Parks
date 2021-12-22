@@ -47,5 +47,12 @@ namespace Parks
                 MessageBox.Show($"Ошибка {ex}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void btn_for_employee_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeMenu employeeMenu = new EmployeeMenu();
+            employeeMenu.Show();
+            Close();
+        }
     }
 }

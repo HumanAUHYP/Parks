@@ -44,5 +44,12 @@ namespace Parks
             appointEmployee.Show();
             Close();
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

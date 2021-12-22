@@ -18,6 +18,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+        <Button x:Name="btn_back" Content="Назад" FontSize="30" Click="btn_back_Click" Margin="0,0,0,120"/>
+
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal" Height="41">
                 <Button x:Name="btn_addPlant" Content="Добавить растение" Padding="20,5,20,5"  Click="btn_addPlant_Click" Width="243" FontSize="20"/>

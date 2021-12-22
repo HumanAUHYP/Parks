@@ -20,6 +20,7 @@
         <TextBlock Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Text="Вход для администратора" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" />
         <TextBlock Grid.Column="0" Grid.Row="1" Text="password" FontSize="40" HorizontalAlignment="Right" />
         <PasswordBox x:Name="tbx_password" Grid.Column="1" Grid.Row="1" Margin="10,10,10,0" FontSize="40" VerticalAlignment="Top" />
-        <Button Grid.Column="2" Grid.Row="2" Content="Войти" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="Войти" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
+        <Button x:Name="btn_for_employee" Grid.Column="0" Grid.Row="2" Content="Для сотрудника" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_for_employee_Click"/>
     </Grid>
 </Window>
