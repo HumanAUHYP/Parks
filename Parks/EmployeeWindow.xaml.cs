@@ -22,7 +22,7 @@ namespace Parks
         public EmployeeWindow()
         {
             InitializeComponent();
-            tb_employee_name.Text = $"Здравствуйте, {Globals.employeeName}";
+            tb_employee_name.Text = $"Здравствуйте, {Globals.employeeName}\nВаш график работы на сегодня:";
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)

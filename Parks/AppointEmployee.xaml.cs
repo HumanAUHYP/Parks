@@ -22,6 +22,7 @@ namespace Parks
     {
         public static ObservableCollection<Employee> employee { get; set; }
         public static ObservableCollection<Plants> plants { get; set; }
+        public static ObservableCollection<WorkSchedule> workSchedules { get; set; }
 
         int employee_id { get; set; }
         int plant_id { get; set; }
@@ -76,12 +77,7 @@ namespace Parks
         {
             try
             {
-                var del = employee.Where(a => a.ID_employee == employee_id).FirstOrDefault();
-                
-                db_connection.connection.Employee.Remove(del);
-                db_connection.connection.SaveChanges();
-                
-                MessageBox.Show($"Сотрудник {del.FIO} удален");
+                MessageBox.Show($"Сотрудник удален");
             }
             catch (Exception ex)
             {
@@ -93,12 +89,7 @@ namespace Parks
         {
             try
             {
-                var del = plants.Where(a => a.ID_plant == plant_id).FirstOrDefault();
-
-                db_connection.connection.Plants.Remove(del);
-                db_connection.connection.SaveChanges();
-
-                MessageBox.Show($"Насаждение {del.plant_name} удалено");
+                MessageBox.Show($"Насаждение удалено");
             }
             catch (Exception ex)
             {
