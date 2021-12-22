@@ -13,15 +13,17 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        
+        <Button x:Name="btn_back" Content="Назад" FontSize="30" Click="btn_back_Click"/>
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel HorizontalAlignment="Center">
-                <DatePicker Grid.Column="1" Margin="0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Сотрудник" FontSize="20" Margin="0,0,50,0"/>
+                <DatePicker x:Name="dp_date" Grid.Column="1" FontSize="20"/>
+                <TextBlock Text="Насаждение" FontSize="20" Margin="50,0,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="300" Width="528">
                 <ListView x:Name="employees" FontSize="20" ItemsSource="{Binding employee}" SelectionChanged="employee_SelectionChanged" Width="264">
@@ -53,8 +55,10 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center">
-                <Button x:Name="btn_appoint" Content="Назначить работника" Padding="20,5,20,5" Click="btn_appoint_Click" Width="243" HorizontalAlignment="Left" FontSize="20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btn_delete_employee" Content="Удалить сотрудника" FontSize="15" Click="btn_delete_employee_Click"/>
+                <Button x:Name="btn_appoint" Content="Назначить работника" Padding="20,5,20,5" Click="btn_appoint_Click" FontSize="20"/>
+                <Button x:Name="btn_delete_plant" Content="Удалить растение" FontSize="15" Click="btn_delete_plant_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>

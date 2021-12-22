@@ -22,6 +22,9 @@ namespace Parks
     {
         public static ObservableCollection<Employee> employee { get; set; }
         public static ObservableCollection<Plants> plants { get; set; }
+
+        int employee_id { get; set; }
+        int plant_id { get; set; }
         public AppointEmployee()
         {
             InitializeComponent();
@@ -33,17 +36,74 @@ namespace Parks
 
         private void employee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var a = (sender as ListView).SelectedItem as Employee;
+            employee_id = a.ID_employee;
         }
 
         private void plant_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            var a = (sender as ListView).SelectedItem as Plants;
+            plant_id = a.ID_plant;
         }
 
         private void btn_appoint_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var save = new WorkSchedule();
+                save.date = dp_date.SelectedDate;
+                save.ID_employee = employee_id;
+                save.ID_plant = plant_id;
 
+                db_connection.connection.WorkSchedule.Add(save);
+                db_connection.connection.SaveChanges();
+                MessageBox.Show("all ok");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка {ex}", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
+            Close();
+        }
+
+        private void btn_delete_employee_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var del = employee.Where(a => a.ID_employee == employee_id).FirstOrDefault();
+                
+                db_connection.connection.Employee.Remove(del);
+                db_connection.connection.SaveChanges();
+                
+                MessageBox.Show($"Сотрудник {del.FIO} удален");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void btn_delete_plant_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var del = plants.Where(a => a.ID_plant == plant_id).FirstOrDefault();
+
+                db_connection.connection.Plants.Remove(del);
+                db_connection.connection.SaveChanges();
+
+                MessageBox.Show($"Насаждение {del.plant_name} удалено");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

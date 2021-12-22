@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ParksModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ParksModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Decorators">
           <Key>
             <PropertyRef Name="ID_decorator" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="ID_employee" />
           </Key>
-          <Property Name="ID_employee" Type="int" Nullable="false" />
+          <Property Name="ID_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FIO" Type="nvarchar(max)" />
           <Property Name="telephon" Type="nvarchar" MaxLength="50" />
           <Property Name="employee_adress" Type="nvarchar(max)" />
@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="ID_plant" />
           </Key>
-          <Property Name="ID_plant" Type="int" Nullable="false" />
+          <Property Name="ID_plant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="plant_name" Type="nvarchar" MaxLength="50" />
           <Property Name="plant_age" Type="nvarchar" MaxLength="50" />
           <Property Name="planting_date" Type="date" />
@@ -90,7 +90,7 @@
           <Key>
             <PropertyRef Name="ID_schedule" />
           </Key>
-          <Property Name="ID_schedule" Type="int" Nullable="false" />
+          <Property Name="ID_schedule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="date" Type="date" />
           <Property Name="ID_employee" Type="int" Nullable="false" />
           <Property Name="ID_plant" Type="int" Nullable="false" />
@@ -228,8 +228,7 @@
             <End Role="Zones" EntitySet="Zones" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ParksModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

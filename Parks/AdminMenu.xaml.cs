@@ -26,12 +26,20 @@ namespace Parks
 
         private void btn_addPlant_Click(object sender, RoutedEventArgs e)
         {
+            AddPlant addPlant = new AddPlant();
+            addPlant.Show();
+            Close();
+        }
 
+        private void btn_addEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            AddEmployee addEmployee = new AddEmployee();
+            addEmployee.Show();
+            Close();
         }
 
         private void btn_appointEmployee_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("All OK");
             AppointEmployee appointEmployee = new AppointEmployee();
             appointEmployee.Show();
             Close();

@@ -19,8 +19,9 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel Height="41">
-                <Button x:Name="btn_addPlant" Content="Добавить растение" Padding="20,5,20,5"  Click="btn_addPlant_Click" Margin="0,0,0,97" Width="243" HorizontalAlignment="Left" FontSize="20"/>
+            <StackPanel Orientation="Horizontal" Height="41">
+                <Button x:Name="btn_addPlant" Content="Добавить растение" Padding="20,5,20,5"  Click="btn_addPlant_Click" Width="243" FontSize="20"/>
+                <Button x:Name="btn_addEmployee" Content="Добавить сотрудника" Padding="20,5,20,5"  Click="btn_addEmployee_Click" Width="243" FontSize="20"/>
             </StackPanel>
             <StackPanel>
                 <Button x:Name="btn_appointEmployee" Content="Назначить работника" Padding="20,5,20,5" Click="btn_appointEmployee_Click" Width="243" HorizontalAlignment="Left" FontSize="20"/>
